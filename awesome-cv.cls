@@ -88,7 +88,7 @@
   pdfsubject={},
   pdfkeywords={}
 }
-
+\usepackage{makecell}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -129,7 +129,7 @@
 \definecolor{green}{HTML}{C2E15F}
 \definecolor{orange}{HTML}{FDA333}
 \definecolor{purple}{HTML}{D3A4F9}
-\definecolor{red}{HTML}{FB4485}
+\definecolor{red}{HTML}{E74C3C} %#E74C3C  FB4485
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
 \definecolor{darktext}{HTML}{414141}
@@ -160,7 +160,7 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
+% \newfontfamily\FA[Path=\@fontdir]{FontAwesome}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
   Path=\@fontdir,
@@ -189,21 +189,27 @@
 % For fundamental structures
 \newcommand*{\headerfirstnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
 \newcommand*{\headerlastnamestyle}[1]{{\fontsize{32pt}{1em}\headerfont\bfseries\color{text} #1}}
-\newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome} #1}}
-\newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
-\newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
+\newcommand*{\headerpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\scshape\color{awesome} #1}}%revised by dapowan
+\newcommand*{\headeraddressstyle}[1]{{\fontsize{10pt}{1em}\headerfont\itshape\color{lighttext} #1}}%revised by dapowan
+\newcommand*{\headersocialstyle}[1]{{\fontsize{8.8pt}{1em}\headerfont\color{text} #1}}  %revised by dapowan
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\sectioncolor{#1}}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{20pt}{1em}\bodyfont\bfseries\color{text}\sectioncolor{#1}}}%revised by dapowan
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
-\newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
-\newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\entrytitlestyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{text} #1}}%\scshape
+\newcommand*{\entrydatestyle}[1]{{\fontsize{11pt}{1em}\bfseries\slshape\color{graytext} #1}} %\bodyfontlight
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{11pt}{1em}\slshape\color{awesome} #1}} %\bodyfontlight
+\newcommand*{\entrydescriptionstyle}[1]{{\fontsize{11pt}{1em}\upshape\color{graytext} #1}} %\bodyfontlight
+
+% For elements of publication
+\newcommand*{\pubtitlestyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\pubauthorstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{text} #1}}%\scshape
+\newcommand*{\pubjourconfstyle}[1]{{\fontsize{11pt}{1em}\slshape\color{red} \textbf{#1}}} %\bodyfontlight
+\newcommand*{\pubdescriptionstyle}[1]{{\fontsize{11pt}{1em}\upshape\color{graytext} #1}} %\bodyfontlight
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -213,14 +219,14 @@
 \newcommand*{\subdescriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of honor
-\newcommand*{\honortitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorpositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\honorlocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
+\newcommand*{\honortitlestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\honorpositionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\honordatestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{darktext} #1}}
+\newcommand*{\honordescriptionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\color{graytext} #1}} %\bodyfontlight \slshape
 
 % For elements of skill
-\newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
+\newcommand*{\skilltypestyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{10pt}{1em}\color{text} #1}} %\bodyfontlight
 
 
 %-------------------------------------------------------------------------------
@@ -334,8 +340,8 @@
 % Others
 \newcommand{\acvSectionTopSkip}{3mm}
 \newcommand{\acvSectionContentTopSkip}{2.5mm}
-
-
+\newcommand{\EntrySkip}{2mm}
+\newcommand{\EntryGap}{\vspace{\EntrySkip}}
 %-------------------------------------------------------------------------------
 %                Commands for utilities
 %-------------------------------------------------------------------------------
@@ -387,7 +393,7 @@
     \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
-    \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\[\acvHeaderAfterPositionSkip]}}%
+    \ifthenelse{\isundefined{\@position}}{}{\headerpositionstyle{\@position\\ [\acvHeaderAfterPositionSkip]}}%
     \ifthenelse{\isundefined{\@address}}{}{\headeraddressstyle{\@address\\[\acvHeaderAfterAddressSkip]}}%
     \headersocialstyle{%
       \newbool{isstart}%
@@ -525,14 +531,26 @@
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#1#3#4}
-      {\entrytitlestyle{#2} \\
-        \multicolumn{1}{L{\textwidth}}{\descriptionstyle{#5}}}
-      {\ifempty{#2#3}
-          {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-          {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-            \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-        \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+    \ifempty{#1#3#4}{\entrytitlestyle{#2}\\\multicolumn{1}{L{\textwidth}}{\entrydescriptionstyle{#5}}}
+    {\ifempty{#5}{\entrytitlestyle{#2}&\entrylocationstyle{#3}\\\entrypositionstyle{#1}&\entrydatestyle{#4}\\}
+      {\ifempty{#2#3}{\entrypositionstyle{#1}&\entrydatestyle{#4}\\}
+      {\ifempty{#1#3}{\entrytitlestyle{#2}&\entrydatestyle{#4}\\}
+        {\entrytitlestyle{#2}&\entrylocationstyle{#3}\\\entrypositionstyle{#1}&\entrydatestyle{#4}\\}}
+        \multicolumn{2}{L{\textwidth}}{\entrydescriptionstyle{#5}}}}
+  \end{tabular*}%
+}
+
+% Define an entry of cv information
+% Usage: \cventry{<title>}{<author>}{<journal_conference>}{<description>}
+\newcommand*{\cvpub}[4]{%
+  \vspace{0.1mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 0cm} R{0cm}}
+      \pubtitlestyle{#2} &\\
+      \pubauthorstyle{#1} &\\
+      \pubjourconfstyle{#3} &\\
+      \multicolumn{2}{L{\textwidth}}{\pubdescriptionstyle{#4}} \\
   \end{tabular*}%
 }
 
@@ -567,15 +585,19 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth - 3.0cm} R{2.5cm}}%C{1.5cm}
 }{%
     \end{tabular*}
   \end{center}
 }
 % Define a line of cv information(honor, award or something else)
-% Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
+% Usage: \cvhonor{<position>}{<title>}{<description>}{<date>}
 \newcommand*{\cvhonor}[4]{%
-  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+\ifempty{#3}
+  {\honordatestyle{#4}&\honortitlestyle{#2}, \honorpositionstyle{#1} \\}
+  {
+    \honordatestyle{#4}&\honortitlestyle{#2}, \honorpositionstyle{#1} \\ &\honordescriptionstyle{#3} \\
+  }   
 }
 
 % Define an environment for cvskill
@@ -601,7 +623,8 @@
   \vspace{-4.0mm}
   \begin{justify}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
-    \setlength{\parskip}{0pt}
+    % \setlength{\parskip}{0pt\itemsep{0.5mm}
+    \setlength\itemsep{1mm}
     \renewcommand{\labelitemi}{\bullet}
 }{%
   \end{itemize}
